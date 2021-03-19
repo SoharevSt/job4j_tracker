@@ -3,9 +3,9 @@ package ru.job4j.oop;
 public class Ball {
 
     public void run(Object o){
-        if (o instanceof Hare || o instanceof Wolf) {
+        if (o.getClass() == Hare.class || o.getClass() == Wolf.class) {
             System.out.println("Убежал)");
-        } else if (o instanceof Fox){
+        } else if (o.getClass() == Fox.class){
             System.out.println("Не убежал(");
         }
     }
