@@ -2,10 +2,10 @@ package ru.job4j.oop;
 
 public class Ball {
 
-    public void run(Object o){
-        if (o.getClass() == Hare.class || o.getClass() == Wolf.class) {
+    public void run(Boolean b){
+        if (!b) {
             System.out.println("Убежал)");
-        } else if (o.getClass() == Fox.class){
+        } else {
             System.out.println("Не убежал(");
         }
     }
