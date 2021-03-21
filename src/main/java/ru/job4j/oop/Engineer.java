@@ -7,6 +7,12 @@ public class Engineer extends Profession {
     private String birthday;
     private String workplace;
 
+    public Engineer(String name, String surname, String education,
+                    String birthday, String workplace) {
+        super(name, surname, education, birthday);
+        this.workplace = workplace;
+    }
+
     public void getTask(Client client) {
 
     }
