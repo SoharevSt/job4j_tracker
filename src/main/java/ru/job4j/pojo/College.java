@@ -8,8 +8,8 @@ public class College {
         student.setName("Иванов");
         student.setGroup("A36");
         student.setDate(new Date());
-        System.out.println("Студент: " + student.getName()
-                            + "\nГруппа: " + student.getGroup()
-                            + "\nДата поступления: " + student.getDate());
+        System.out.println("Студент: " + student.getName() + System.lineSeparator()
+                            + "Группа: " + student.getGroup() + System.lineSeparator()
+                            + "Дата поступления: " + student.getDate());
     }
 }
