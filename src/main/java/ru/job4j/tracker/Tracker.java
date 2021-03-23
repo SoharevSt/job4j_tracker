@@ -33,7 +33,7 @@ public class Tracker {
         Item[] itemsWithoutNull = new Item[items.length];
         int size = 0;
         for (Item item : items) {
-            if (item.getName().equals(key)) {
+            if (item != null && item.getName().equals(key)) {
                 itemsWithoutNull[size] = item;
                 size++;
             }
