@@ -3,7 +3,7 @@ package ru.job4j.tracker;
 public class StartUI {
     public static void createItem(Input input, Tracker tracker) {
         System.out.println("=== Create a new Item ====");
-        String name = input.askStr("Enter name: ");
+        String name = input.askStr("Enter items name: ");
         Item item = new Item(name);
         tracker.add(item);
     }
@@ -19,7 +19,7 @@ public class StartUI {
     public static void replaceItem(Input input, Tracker tracker) {
         System.out.println("=== Edit item ====");
         int id = input.askInt("Enter item id: ");
-        String name = input.askStr("Enter new item: ");
+        String name = input.askStr("Enter a new name of item: ");
         Item item = new Item(name);
         if (tracker.replace(id, item)) {
             System.out.println("=== Adding the item was successful ====");
