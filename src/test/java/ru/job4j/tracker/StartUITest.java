@@ -2,8 +2,6 @@ package ru.job4j.tracker;
 
 import org.junit.Test;
 
-import java.time.format.DateTimeFormatter;
-
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.*;
@@ -27,9 +25,7 @@ public class StartUITest {
                         "0. Show all items" + System.lineSeparator() +
                         "1. Exit Program" + System.lineSeparator() +
                         "=== Show all items ====" + System.lineSeparator() +
-                        "Item{id=1, name='Item1', created=" +
-                        item.getCreated().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH-mm-ss")) +
-                        "}" + System.lineSeparator() +
+                        item + System.lineSeparator() +
                         "Menu." + System.lineSeparator() +
                         "0. Show all items" + System.lineSeparator() +
                         "1. Exit Program" + System.lineSeparator()
@@ -54,9 +50,7 @@ public class StartUITest {
                         "0. Find item by Id" + System.lineSeparator() +
                         "1. Exit Program" + System.lineSeparator() +
                         "=== Find item by Id ====" + System.lineSeparator() +
-                        "Item{id=1, name='Item1', created=" +
-                        item.getCreated().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH-mm-ss")) +
-                        "}" + System.lineSeparator() +
+                        item + System.lineSeparator() +
                         "Menu." + System.lineSeparator() +
                         "0. Find item by Id" + System.lineSeparator() +
                         "1. Exit Program" + System.lineSeparator()
@@ -81,9 +75,7 @@ public class StartUITest {
                         "0. Find items by name" + System.lineSeparator() +
                         "1. Exit Program" + System.lineSeparator() +
                         "=== Find items by name ====" + System.lineSeparator() +
-                        "Item{id=1, name='Item1', created=" +
-                        item.getCreated().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH-mm-ss")) +
-                        "}" + System.lineSeparator() +
+                        item + System.lineSeparator() +
                         "Menu." + System.lineSeparator() +
                         "0. Find items by name" + System.lineSeparator() +
                         "1. Exit Program" + System.lineSeparator()
@@ -137,7 +129,7 @@ public class StartUITest {
                 new ExitAction(output)
         };
         new StartUI(output).init(in, tracker, actions);
-        assertThat(tracker.findById(item.getId()).getName(), is(replacedName));
+        assertEquals(tracker.findById(item.getId()).getName(), replacedName);
     }
 
     @Test
