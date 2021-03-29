@@ -11,11 +11,14 @@ public class PhoneDictionary {
 
     public ArrayList<Person> find(String key) {
         ArrayList<Person> result = new ArrayList<>();
-        for(Person person : persons){
-            if(person.getName().contains(key) || person.getSurname().contains(key) ||
+        for (Person person : persons) {
+            if (person.getName().contains(key) || person.getSurname().contains(key) ||
                     person.getPhone().contains(key) || person.getAddress().contains(key)) {
                 result.add(person);
             }
+        }
+        if (result.size() == 0) {
+            throw new IllegalArgumentException("Key " + key + " not found");
         }
         return result;
     }
