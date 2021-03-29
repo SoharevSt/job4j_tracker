@@ -17,9 +17,6 @@ public class PhoneDictionary {
                 result.add(person);
             }
         }
-        if (result.size() == 0) {
-            throw new IllegalArgumentException("Key " + key + " not found");
-        }
         return result;
     }
 }
