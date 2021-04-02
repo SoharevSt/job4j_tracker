@@ -26,6 +26,6 @@ public class SortByNameItemReversOrderTest {
         expected.add(new Item(1, "Заявка"));
         expected.add(new Item(2, "Заявка"));
         expected.add(new Item(3, "Благодарность"));
-        assertEquals(expected.toString(), items.toString());
+        assertEquals(expected, items);
     }
 }

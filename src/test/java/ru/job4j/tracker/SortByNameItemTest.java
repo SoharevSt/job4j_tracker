@@ -26,6 +26,6 @@ public class SortByNameItemTest {
                 expected.add(new Item(2, "Заявка"));
                 expected.add(new Item(4, "Рапорт"));
                 expected.add(new Item(5, "Рапорт"));
-        assertEquals(expected.toString(), items.toString());
+        assertEquals(expected, items);
     }
 }
