@@ -9,7 +9,7 @@ public class Surgeon extends Doctor {
         this.department = department;
     }
 
-    public void performSurgery (Pacient pacient) {
+    public void performSurgery(Pacient pacient) {
 
     }
 

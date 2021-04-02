@@ -9,7 +9,7 @@ public class Programmer extends Engineer {
         this.department = department;
     }
 
-    public void writeCod (Client client) {
+    public void writeCod(Client client) {
 
     }
 }

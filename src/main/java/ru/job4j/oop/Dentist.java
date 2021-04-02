@@ -9,7 +9,7 @@ public class Dentist extends Doctor {
         this.department = department;
     }
 
-    public void removeTooth (Pacient pacient) {
+    public void removeTooth(Pacient pacient) {
 
     }
 }

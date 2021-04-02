@@ -21,7 +21,8 @@ public class Point {
     }
 
     public double distance3d(Point now) {
-        return Math.sqrt(Math.pow((this.x - now.x), 2) + Math.pow((this.y - now.y), 2) + Math.pow((this.z - now.z), 2));
+        return Math.sqrt(Math.pow((this.x - now.x), 2) + Math.pow((this.y - now.y), 2)
+                + Math.pow((this.z - now.z), 2));
     }
 
     public static void main(String[] args) {

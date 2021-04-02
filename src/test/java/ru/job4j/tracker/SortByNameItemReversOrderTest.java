@@ -18,7 +18,8 @@ public class SortByNameItemReversOrderTest {
         items.add(new Item(5, "Рапорт"));
         items.add(new Item(4, "Рапорт"));
         items.add(new Item(3, "Благодарность"));
-        Comparator<Item> comparator = new SortByNameItemReversOrder().thenComparing(new SortedByIdItem());
+        Comparator<Item> comparator = new SortByNameItemReversOrder()
+                .thenComparing(new SortedByIdItem());
         items.sort(comparator);
         List<Item> expected = new ArrayList<>();
         expected.add(new Item(4, "Рапорт"));
