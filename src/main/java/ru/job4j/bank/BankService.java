@@ -5,14 +5,35 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Класс описывает модель для банковской системы.
+ * В системе можно производить следующие действия:
+ * 1. Регистрировать пользователя.
+ * 2. Удалять пользователя из системы.
+ * 3. Добавлять пользователю банковский счет. У пользователя системы могут быть несколько счетов.
+ * 4. Переводить деньги с одного банковского счета на другой счет.
+ * @author STANISLAV SOHAFREV
+ * @version 1.0
+ */
 public class BankService {
 
+    /**
+     * Это поле содержит всех пользователей системы с привязанными к ним счетами.
+     * Хранение осуществляется в коллекции типа HashMap
+     */
     private Map<User, List<Account>> users = new HashMap<>();
 
+    /**
+     * Метод добавляет пользователя в систему
+     */
     public void addUser(User user) {
-        users.putIfAbsent(user, new ArrayList<Account>());
+        users.putIfAbsent(user, new ArrayList<>());
     }
 
+    /**
+     * Метод проверяет наличие пользователя по паспорту и добавляет новый счет
+     * пользователю, если такого счета еще нет
+     */
     public void addAccount(String passport, Account account) {
         User user = findByPassport(passport);
         if (user != null) {
@@ -23,6 +44,10 @@ public class BankService {
         }
     }
 
+    /**
+     * Метод проверяет наличие пользователя в системе по его паспорту
+     * @return возвращает пользователя или null если такого пользователя нет
+     */
     public User findByPassport(String passport) {
         User result = null;
         for (User user : users.keySet()) {
@@ -34,6 +59,10 @@ public class BankService {
         return result;
     }
 
+    /**
+     * Метод ищет счет пользователя по реквизитам счета и паспорту пользователя
+     * @return возвращает счет пользователя или null если такого счета нет
+     */
     public Account findByRequisite(String passport, String requisite) {
         Account result = null;
         User user = findByPassport(passport);
@@ -48,6 +77,11 @@ public class BankService {
         return result;
     }
 
+    /**
+     * Метод для перечисления денег с одного счёта на другой
+     * @return Если счёт не найден или не хватает денег на счёте srcAccount (с которого переводят),
+     * то метод возвращает false, иначе - true
+     */
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {
         boolean result = false;
