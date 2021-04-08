@@ -15,6 +15,6 @@ public class DepAskComp implements Comparator<String> {
                 return Integer.compare(Integer.parseInt(arr1[1]), Integer.parseInt(arr2[1]));
             }
         }
-        return Integer.compare(left.length(),right.length() );
+        return Integer.compare(left.length(), right.length());
     }
 }
