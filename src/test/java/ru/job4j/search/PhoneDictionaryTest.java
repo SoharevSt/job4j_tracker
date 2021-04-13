@@ -19,6 +19,16 @@ public class PhoneDictionaryTest {
     }
 
     @Test
+    public void whenFindByPhone() {
+        PhoneDictionary phones = new PhoneDictionary();
+        phones.add(
+                new Person("Petr", "Arsentev", "534872", "Bryansk")
+        );
+        ArrayList<Person> persons = phones.find("5348");
+        assertEquals("Arsentev", persons.get(0).getSurname());
+    }
+
+    @Test
     public void whenNotFoundPerson() {
         PhoneDictionary phones = new PhoneDictionary();
         phones.add(
