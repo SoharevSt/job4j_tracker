@@ -81,7 +81,7 @@ public class SchoolTest {
         School sc = new School();
         Map<String, Student> rsl = sc.collectToMap(students);
         Map<String, Student> expected = new HashMap<>();
-        expected.put("Surname1", new Student(20, "Surname1"));
+        expected.put("Surname1", new Student(10, "Surname1"));
         expected.put("Surname3", new Student(30, "Surname3"));
         expected.put("Surname4", new Student(40, "Surname4"));
         expected.put("Surname6", new Student(80, "Surname6"));
