@@ -1,0 +1,21 @@
+package ru.job4j.stream;
+
+import java.util.stream.Stream;
+
+enum Suit {
+    Diamonds, Hearts, Spades, Clubs
+}
+
+enum Value {
+    V_6, V_7, V_8
+}
+
+public class Card {
+
+    public static void main(String[] args) {
+        Stream.of(Suit.values())
+                .flatMap(s -> Stream.of(Value.values())
+                .map(v -> s + " " + v))
+                .forEach(System.out::println);
+    }
+}
