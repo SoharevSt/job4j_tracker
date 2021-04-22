@@ -11,15 +11,15 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" +
-                "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", engine='" + engine + '\'' +
-                ", volume=" + volume +
-                ", numberOfDoors=" + numberOfDoors +
-                ", color='" + color + '\'' +
-                ", price=" + price +
-                '}';
+        return "Car{"
+                + "brand='" + brand + '\''
+                + ", model='" + model + '\''
+                + ", engine='" + engine + '\''
+                + ", volume=" + volume
+                + ", numberOfDoors=" + numberOfDoors
+                + ", color='" + color + '\''
+                + ", price=" + price
+                + '}';
     }
 
     static class Builder {
@@ -31,32 +31,37 @@ public class Car {
         private String color;
         private int price;
 
-
-        Builder buildBrand (String brand) {
+        Builder buildBrand(String brand) {
             this.brand = brand;
             return this;
+        }
 
-        }Builder buildModel (String model) {
+        Builder buildModel(String model) {
             this.model = model;
             return this;
+        }
 
-        }Builder buildEngine (String engine) {
+        Builder buildEngine(String engine) {
             this.engine = engine;
             return this;
+        }
 
-        }Builder buildVolume (int volume) {
+        Builder buildVolume(int volume) {
             this.volume = volume;
             return this;
+        }
 
-        }Builder buildNumberOfDoors (byte numberOfDoors) {
+        Builder buildNumberOfDoors(byte numberOfDoors) {
             this.numberOfDoors = numberOfDoors;
             return this;
+        }
 
-        }Builder buildColor (String color) {
+        Builder buildColor(String color) {
             this.color = color;
             return this;
+        }
 
-        }Builder buildPrice (int price) {
+        Builder buildPrice(int price) {
             this.price = price;
             return this;
         }
@@ -74,13 +79,14 @@ public class Car {
         }
 
     }
+
     public static void main(String[] args) {
         Car car = new Builder()
                 .buildBrand("BMW")
                 .buildModel("M3")
                 .buildEngine("R6")
                 .buildVolume(2993)
-                .buildNumberOfDoors((byte)2)
+                .buildNumberOfDoors((byte) 2)
                 .buildColor("Blue")
                 .buildPrice(120000)
                 .build();
@@ -88,7 +94,7 @@ public class Car {
                 .buildBrand("Mersedes")
                 .buildColor("Red")
                 .buildModel("E200")
-                .buildNumberOfDoors((byte)4)
+                .buildNumberOfDoors((byte) 4)
                 .build();
         System.out.println(car);
         System.out.println(car2);
